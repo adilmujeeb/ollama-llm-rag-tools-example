@@ -19,7 +19,6 @@ The application allows you to interact with an AI agent that can:
 
 ## Setup
 
-*(Ensure you are in the `c:\workspace\ai-agent\ollama-llm-rag-tools-example` directory for the following commands)*
 
 Follow these steps to set up and run the application:
 
@@ -34,6 +33,7 @@ Follow these steps to set up and run the application:
     *(Optional: You can use other models like `llama3`, `mistral`, etc. Just make sure to update the `OLLAMA_MODEL` variable in `simple_rag_tools_app.py`)*
 
 3.  **Clone or Download the Code:**
+    Clone or Download - https://github.com/saurav-samantray/ollama-llm-rag-tools-example.git
     Ensure you have the `simple_rag_tools_app.py` file in your workspace (e.g., `c:\workspace\ai-agent\ollama-llm-rag-tools-example\`).
 4.  **Create a Python Environment (Recommended):**
     It's good practice to use a virtual environment.
@@ -47,7 +47,7 @@ Follow these steps to set up and run the application:
 5.  **Install Python Dependencies:**
     Install the required libraries using pip.
     ```bash
-    pip install langchain langchain_community langchain_ollama faiss-cpu langchainhub python-dotenv
+    pip install -r requirements.txt
     ```
     *   `langchain`, `langchain_community`, `langchain_ollama`, `langchainhub`: Core LangChain components and Ollama integration.
     *   `faiss-cpu`: Vector store library for RAG (CPU version).
