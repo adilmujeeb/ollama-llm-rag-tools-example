@@ -16,10 +16,13 @@ from langchain import hub
 from langchain.prompts import PromptTemplate
 from langchain.agents import create_react_agent, AgentExecutor
 
+from langchain_community.document_loaders import TextLoader #Added
+
 # --- Configuration ---
 # Make sure Ollama is running with the specified model
 # (e.g., run "ollama run llama3" in your terminal)
 OLLAMA_MODEL = "llama3:8b"
+OLLAMA_MODEL = "llama3:latest" #Updated the model as per local environment
 OLLAMA_BASE_URL = "http://localhost:11434" # Default Ollama URL
 DOCS_FOLDER = "docs_to_load" # Folder to load documents from
 
@@ -35,8 +38,10 @@ print("LLM Initialized.")
 print(f"Loading documents from: {DOCS_FOLDER}")
 try:
     # Using DirectoryLoader for .txt files by default
-    loader = DirectoryLoader(DOCS_FOLDER, glob="**/*.txt", show_progress=True)
+    # loader = DirectoryLoader(DOCS_FOLDER, glob="**/*.txt", show_progress=True) # This is giving error in loader
+    loader = DirectoryLoader(DOCS_FOLDER, glob="**/*.txt", show_progress=True, loader_cls=TextLoader) # Explicitly use TextLoader
     loaded_docs = loader.load()
+    print("Loaded docs:", loaded_docs)
     print(f"Loaded {len(loaded_docs)} documents for RAG.")
     if not loaded_docs:
         print(f"Warning: No documents found in '{DOCS_FOLDER}'. RAG might not work as expected.")
