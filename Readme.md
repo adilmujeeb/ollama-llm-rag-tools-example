@@ -1,6 +1,9 @@
 # Simple Ollama RAG + Tools Example
+(Source: https://saurav-samantray.medium.com/unlock-the-power-of-local-ai-build-your-first-agent-with-ollama-rag-and-langchain-f8d3bb171ea1)
 
 This application demonstrates a basic example of using a locally running Ollama Large Language Model (LLM) combined with Retrieval-Augmented Generation (RAG) and custom Tools, orchestrated by the LangChain framework.
+
+![Architecture](SimpleArch.png)
 
 ## Overview
 
